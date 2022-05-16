@@ -1,3 +1,4 @@
+# python example of association in OOP
 
 class Player():
     """
@@ -16,9 +17,20 @@ class Player():
 class Team():
     """
     the class for teams which is made of associated aggregated players.
+    has the methods:
+    addPlayer() - adds a player of type player,
+    printPlayers() - prints all the players names,
     """
     def __init__(self) -> None:
         self.allPlayers = []
     
     def addPlayer(self, player):
-        self.addPlayer.append(player)
+        self.allPlayers.append(player)
+
+    def printPlayers(self):
+        for player in self.allPlayers:
+            print(player.name)
+
+manUnited = Team()
+ronaldo = Player("Ronaldo", 38, "extreme")
+manUnited.addPlayer(ronaldo)
